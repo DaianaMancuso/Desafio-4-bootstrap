@@ -59,7 +59,6 @@ footer ul {
 
 footer ul li {
     display: inline;
-    /*margin: 0 15px;*/
 }
 
 .logo-fb {
@@ -84,16 +83,16 @@ a {
 
 /*         Estilos de Inicio                          */
 
-.ft-index {
+/*.ft-index {
     position: relative;
-    top: 100px;
-}
+    top: ;
+}*/
 
-.derechos {
+/*.derechos {
     color: blanchedalmond;
     font-weight: bold;
     
-}
+}*/
 
 
 /*              Estilos de productos               */
@@ -173,21 +172,24 @@ a {
 /* Subtitulos de los productos */
 
 div h2 {
-    font-size: 20px;
+    font-size: 30px;
 
 }
 
-/*       footer de productos      */
 
-.footer-productos{
-    position: relative;
-    top: 290px;
-}
+
+/*Info de los productos */
+
+
 
 /*               Estilos de tortas                   */
 
 .body-tortas {
     background-color: #ec9dd2;
+}
+
+.lemon-p, .brownie-b, .crumble-c, .pastafrola-p {
+    font-size: 25px;
 }
 
 .lemon {
@@ -213,11 +215,19 @@ div h2 {
     background-color: #ec9dd2;
 }
 
+.tiramisu-t, .parfait-p {
+    font-size: 25px;
+}
+
 
 /*                Estilos de alfajores                */
 
 .body-alfajores {
     background-color: #ec9dd2;
+}
+
+.alfajores-a {
+    font-size: 25px;
 }
 
 
@@ -277,7 +287,6 @@ div h2 {
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
-
 }
 
 #quienes-somos {
@@ -288,6 +297,19 @@ div h2 {
     margin: 10px;
     padding: 10px;
     border-radius: 50px;
+}
+
+.tarjetas-qs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tarjetas-qs .card {
+    margin: 20px;
+    font-size: 20px;
+    
 }
 
 .cont-qs {
@@ -301,13 +323,6 @@ p {
     margin: 10px;
     padding: 10px
 }  
-
-.ft-qs {
-    position: relative;
-    top: 300px;
-}
-
-
 
 /*                      Estilos de Contactenos            */
 
@@ -337,7 +352,7 @@ p {
 /* Inicio de trancisiones y animaciones */
 
 /* Del nav bar */
- .nav-bar .menu-nav li a {
+.nav-bar .menu-nav li a {
         position: relative;
         overflow: hidden;
         display: inline-block;
@@ -391,31 +406,7 @@ p {
     
 }
 
-/* de foto de quienes somos*/
-
-.img-qs {
-    animation-name: fade-in;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    animation-duration: 3s;
-}
-
-@keyframes fade-in {
-    0% {
-        transform:translate(90px)
-    }
-    50% {
-        transform:translate(30px)
-    }
-    0% {
-        transform:translate(0px)
-    }
-    
-}  
-
 /* estilos de componentes de Bootstrap*/
-
-/* De Badge de nombre */
 
 /*De las cards de datos*/
 .card {
@@ -432,18 +423,27 @@ p {
 /* Del form de contactenos */
     .form-ct {
         padding: 5px;
-        margin: 100px;
-
+        margin: 80px;
+        
         background-color: rgb(199, 139, 235);
         font-size: 20px;
+        border-radius: 20px;
         font-weight: bold;
         text-align: center;
     }
 
+/* De los botones de información */
+.btn {
+    background-color: #ce5cb5;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
 
 /*                                   INICIO DE RESPONSIVE                       */
 
-/* Mobile first de 480px*/
+/* Mobile first de 360px*/
 
 
 @media screen and (min-width: 360px) {
@@ -455,7 +455,7 @@ p {
             .body-ppal {
                 
                 display: grid;
-                grid-template-rows: auto auto auto auto;
+                grid-template-rows: auto auto 500px;
                 grid-template-areas: 
                 "logo main"
                 "nav main"
@@ -474,35 +474,11 @@ p {
                     grid-area: main;
                     
                 }
-                
 
-        /*footer*/
-
-            .ft-index {
-                position: relative;
-                /*bottom: 30px;*/
-                justify-content: space-around;
-                height: 200px;
-                justify-self: center;
+                .text-center {
+                    grid-area: footer;
+                }
                 
-                display: flex;
-                flex-wrap: wrap;
-                
-                
-                
-            }
-
-            .ul-redes{
-                display: flex;
-                margin: 1px;
-                
-            }
-
-            .ul-redes li {
-                display: inline;
-                
-            }
-        
 
     /*inicio*/
 
@@ -664,10 +640,12 @@ p {
         
     /*Quienes somos */
         .img-qs {
-            width: 200px;
+            width: 400px;
             position: relative;
             top: 20px;
+
             }
+
         .cont-qs p{
             font-size: 20px;
         }
@@ -685,17 +663,6 @@ p {
             background-color: rgb(214, 130, 203);
             position: relative;
             right: 10px;
-        }
-
-        .ft-index {
-            position: relative;
-            top: 100px;
-        }
-
-        .derechos {
-            color: blanchedalmond;
-            font-weight: bold;
-            
         }
 
     /* Postres */
@@ -718,8 +685,17 @@ p {
             width: 700px;
             position: relative;
             top: 20px;
+
             
         }
+    
+    /* Contactenos */
+    .form-ct {
+        width: 400px;
+        position: relative;
+        left: 110px;
+        
+    }
 
 }
 
@@ -745,44 +721,6 @@ p {
             font-weight: bold;
             
     }
-
-
-    /* Footer*/
-
- /*       footer {
-            font-family: 'Oxygen', sans-serif;
-            font-family: 'Roboto', sans-serif;
-
-            padding: 5px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
-            
-            
-        }
-
-        footer ul {
-            list-style-type: none;
-
-        }
-
-        footer ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        .logo-fb {
-            height: 50px;
-        }
-
-        .logo-ig {
-            height: 50px;
-        }
-
-        .logo-wp {
-            height: 50px;
-        }*/
 
     /*Inicio*/
 
@@ -879,6 +817,15 @@ p {
         width: 800px;
         position: relative;
         top: 20px;
+
+        
+    }
+
+    /* Contactenos*/
+    .form-ct {
+        width: 400px;
+        position: relative;
+        left: 350px;
         
     }
 
